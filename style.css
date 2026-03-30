@@ -1,0 +1,205 @@
+/* ===== ESTILO GLOBAL DA PÁGINA ===== */
+body {
+    background-color: #000; /* Define o fundo da página como preto */
+    color: #4b0082; /* Define a cor padrão do texto (roxo escuro) */
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif; /* Define a fonte principal com alternativas */
+    margin: 0; /* Remove margens padrão do navegador */
+    min-height: 100vh; /* Garante que o body tenha no mínimo a altura da tela inteira */
+    transition: background-color 0.3s, color 0.3s; /* Transição suave para mudança de tema */
+}
+
+/* ===== MODO CLARO ===== */
+body.light-mode {
+    background-color: #fff; /* Fundo branco no modo claro */
+    color: #000; /* Texto preto */
+}
+
+body.light-mode .logo {
+    color: #9333EA; /* Mantém o purple da Netflix */
+}
+
+body.light-mode h2 {
+    color: #000; /* Texto preto */
+}
+
+body.light-mode .profile {
+    color: #000; /* Texto preto nos links */
+}
+
+/* ===== TOPO (LOGO DA NETFLIX) ===== */
+header {
+    text-align: center; /* Centraliza o conteúdo do header */
+}
+.logo{
+    font-family: Arial, Helvetica, sans-serif; /* Fonte do logo (pode ser personalizada) */
+    font-weight: 900; /* Peso da fonte (muito negrito) */
+    color: #9333EA; /* Cor do texto do logo (purple) */
+    font-size: 3rem; /* Tamanho grande do texto */
+    font-weight: bold; /* Deixa o texto em negrito */
+    letter-spacing: 2px; /* Espaçamento entre letras */
+    margin-bottom: 1rem; /* Espaço abaixo do logo */
+    transform: rotate(-2deg) skew(-1deg); /* Deixa o logo levemente torto */
+    display: inline-block; /* Necessário para a transformação funcionar corretamente */
+    transition: transform 0.3s ease-in-out; /* Suave transição na animação */
+}
+
+.logo:hover {
+    transform: rotate(-3deg) skew(-2deg); /* Aumenta o efeito no hover para mais dinamismo */
+}
+h2{
+    font-size: 2rem; /* Tamanho grande do texto */
+    margin-bottom: 2rem; /* Espaço abaixo do título */
+    color: #fff;/*deixa o texto branco*/
+}
+/* ===== BOTÃO DE TOGGLE DE TEMA ===== */
+#theme-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+body.light-mode #theme-toggle {
+    color: #000;
+}
+/* ===== CONTAINER PRINCIPAL ===== */
+main {
+    display: flex; /* Ativa o flexbox */
+    flex-direction: column; /* Organiza os elementos em coluna (um embaixo do outro) */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Ocupa a altura inteira da tela */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* ===== TÍTULO ===== */
+h1 {
+    font-size: 2.5rem; /* Tamanho grande do texto */
+    font-weight: bold; /* Deixa o texto em negrito */
+    margin-bottom: 2rem; /* Espaço abaixo do título */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+/* ===== SEÇÃO DOS PERFIS ===== */
+section[aria-label="Perfis disponíveis"] {
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: 600px; /* Limita a largura máxima */
+    display: flex; /* Ativa flexbox */
+    justify-content: center; /* Centraliza os itens */
+}
+
+/* ===== CONTAINER DOS PERFIS ===== */
+.profiles {
+    list-style: none; /* Remove o marcador da lista externa */
+    padding: 0; /* Remove padding padrão */
+    margin: 0; /* Remove margem padrão */
+}
+
+/* ===== LISTA NÃO ORDENADA DOS PERFIS ===== */
+.profiles ul {
+    display: flex; /* Coloca os perfis lado a lado */
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 5rem; /* Espaço entre os perfis */
+    flex-wrap: nowrap; /* Impede quebra de linha (fica sempre lado a lado) */
+    list-style: none; /* Remove os marcadores da lista */
+    padding: 0; /* Remove padding padrão */
+    margin: 0; /* Remove margem padrão */
+}
+
+/* ===== LINK DO PERFIL ===== */
+.profile {
+    text-decoration: none; /* Remove sublinhado do link */
+    color: #a020f0; /* Cor do texto (roxo) */
+    transition: transform 0.2s, box-shadow 0.2s; /* Animação suave ao interagir */
+}
+
+/* ===== EFEITO AO PASSAR O MOUSE ===== */
+.profile:hover {
+    transform: scale(1.1); /* Aumenta levemente o tamanho */
+}
+
+/* ===== FIGURA (IMAGEM + NOME) ===== */
+figure {
+    margin: 0; /* Remove margem padrão */
+    display: flex; /* Ativa flexbox */
+    flex-direction: column; /* Organiza em coluna */
+    align-items: center; /* Centraliza os itens */
+}
+
+/* ===== IMAGEM DO PERFIL ===== */
+.profile img {
+    width: 120px; /* Largura fixa */
+    height: 120px; /* Altura fixa */
+    border-radius: 8px; /* Bordas levemente arredondadas */
+    object-fit: cover; /* Ajusta a imagem sem distorcer */
+    border: 3px solid transparent; /* Borda invisível inicialmente */
+    margin-bottom: 0.5rem; /* Espaço abaixo da imagem */
+    background: #222; /* Cor de fundo caso a imagem não carregue */
+}
+
+/* ===== TEXTO DO NOME ===== */
+figcaption {
+    font-size: 1.1rem; /* Tamanho da fonte */
+    font-weight: 500; /* Peso da fonte (semi-negrito) */
+    margin-top: 0.5rem; /* Espaço acima do texto */
+    letter-spacing: 0.5px; /* Espaçamento entre letras */
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* Tablet e Desktop */
+@media (min-width: 769px) {
+    .profiles ul {
+        gap: 4rem; /* Reduz o espaço entre perfis em telas maiores */
+    }
+    .profile img {
+        width: 140px; /* Aumenta ligeiramente a imagem em telas maiores */
+        height: 140px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 2rem; /* Reduz o tamanho do logo */
+        margin-bottom: 0.5rem; /* Reduz margem */
+        transform: rotate(-2deg) skew(-1deg); /* Mantém o efeito torto */
+    }
+    h2 {
+        font-size: 1.5rem; /* Reduz tamanho do h2 */
+        margin-bottom: 1rem;
+    }
+    h1 {
+        font-size: 2rem; /* Reduz tamanho do h1 */
+        margin-bottom: 1.5rem;
+    }
+    .profiles ul {
+        flex-direction: column; /* Perfis em coluna no mobile */
+        gap: 2rem; /* Reduz espaço */
+    }
+    .profile img {
+        width: 100px; /* Reduz tamanho da imagem */
+        height: 100px;
+    }
+    figcaption {
+        font-size: 1rem; /* Reduz tamanho da fonte */
+    }
+}
+
+/* ===== BORDA AO PASSAR O MOUSE ===== */
+.profile:hover img {
+    border-color: #a020f0; /* Muda a cor da borda da imagem */
+}
+
+/* ===== PARÁGRAFO DENTRO DO PERFIL (se usar) ===== */
+.profile p {
+    margin-top: 0.5rem; /* Espaço acima */
+    font-size: 1.2rem; /* Tamanho do texto */
+    font-weight: 400; /* Peso normal */
+    color: purple; /* Cor roxa */
+}

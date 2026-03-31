@@ -48,7 +48,7 @@ header {
 }
 h2{
     font-size: 2rem; /* Tamanho grande do texto */
-    margin-bottom: 2rem; /* Espaço abaixo do título */
+    margin-bottom: 1rem; /* Espaço abaixo do título */
     color: #fff;/*deixa o texto branco*/
 }
 /* ===== BOTÃO DE TOGGLE DE TEMA ===== */
@@ -91,6 +91,57 @@ section[aria-label="Perfis disponíveis"] {
     max-width: 600px; /* Limita a largura máxima */
     display: flex; /* Ativa flexbox */
     justify-content: center; /* Centraliza os itens */
+    flex-direction: column; /* Organiza os itens em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+/* ===== MENSAGEM DE SELEÇÃO ===== */
+.select-message {
+    text-align: center; /* Centraliza o texto */
+    font-size: 1.1rem; /* Tamanho médio da fonte */
+    color: #fff; /* Cor branca */
+    margin-bottom: 2rem; /* Espaço abaixo */
+    font-weight: 400; /* Peso normal */
+    opacity: 0.9; /* Levemente transparente */
+}
+
+body.light-mode .select-message {
+    color: #000; /* Texto preto no modo claro */
+}
+
+/* ===== BOTÃO GERENCIAR PERFIS ===== */
+.manage-profiles {
+    display: block; /* Torna o link um bloco */
+    text-align: center; /* Centraliza o texto */
+    margin: 2rem auto 0; /* Centraliza horizontalmente e espaço acima */
+    padding: 0.8rem 2rem; /* Espaçamento interno */
+    background-color: rgba(160, 32, 240, 0.1); /* Fundo roxo transparente */
+    color: #a020f0; /* Cor roxa */
+    text-decoration: none; /* Remove sublinhado */
+    font-size: 1rem; /* Tamanho da fonte */
+    font-weight: 500; /* Peso semi-negrito */
+    border: 2px solid #a020f0; /* Borda roxa */
+    border-radius: 8px; /* Bordas arredondadas */
+    transition: all 0.3s; /* Transição suave */
+    max-width: 200px; /* Largura máxima */
+}
+
+.manage-profiles:hover {
+    background-color: #a020f0; /* Fundo roxo sólido no hover */
+    color: #fff; /* Texto branco */
+    transform: translateY(-2px); /* Efeito de elevação */
+    box-shadow: 0 4px 12px rgba(160, 32, 240, 0.3); /* Sombra */
+}
+
+body.light-mode .manage-profiles {
+    background-color: rgba(0, 0, 0, 0.05); /* Fundo cinza claro no modo claro */
+    color: #000; /* Texto preto */
+    border-color: #000; /* Borda preta */
+}
+
+body.light-mode .manage-profiles:hover {
+    background-color: #000; /* Fundo preto no hover */
+    color: #fff; /* Texto branco */
 }
 
 /* ===== CONTAINER DOS PERFIS ===== */
@@ -101,14 +152,13 @@ section[aria-label="Perfis disponíveis"] {
 }
 
 /* ===== LISTA NÃO ORDENADA DOS PERFIS ===== */
-.profiles ul {
-    display: flex; /* Coloca os perfis lado a lado */
-    justify-content: center; /* Centraliza horizontalmente */
-    gap: 5rem; /* Espaço entre os perfis */
-    flex-wrap: nowrap; /* Impede quebra de linha (fica sempre lado a lado) */
-    list-style: none; /* Remove os marcadores da lista */
-    padding: 0; /* Remove padding padrão */
-    margin: 0; /* Remove margem padrão */
+.profiles {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 /* ===== LINK DO PERFIL ===== */
@@ -173,6 +223,16 @@ figcaption {
     h2 {
         font-size: 1.5rem; /* Reduz tamanho do h2 */
         margin-bottom: 1rem;
+    }
+    .select-message {
+        font-size: 1rem; /* Reduz tamanho da mensagem */
+        margin-bottom: 1.5rem; /* Reduz margem */
+    }
+    .manage-profiles {
+        font-size: 0.9rem; /* Reduz tamanho do link */
+        margin-top: 1.5rem; /* Reduz margem */
+        padding: 0.6rem 1.5rem; /* Padding menor no mobile */
+        max-width: 180px; /* Largura menor no mobile */
     }
     h1 {
         font-size: 2rem; /* Reduz tamanho do h1 */

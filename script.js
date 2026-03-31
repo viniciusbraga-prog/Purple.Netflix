@@ -29,12 +29,16 @@ toggleButton.addEventListener('click', () => {
 const profiles = document.querySelectorAll('.profile');
 
 profiles.forEach(profile => {
-    profile.addEventListener('click', () => {
+    profile.addEventListener('click', (e) => {
+        e.preventDefault();
         const img = profile.querySelector('img');
         const name = profile.querySelector('figcaption');
         
-        console.log('Perfil clicado:', name.textContent, img.src);
+        console.log('Perfil clicado:', name.textContent, img.getAttribute('src'));
         localStorage.setItem('perfilAtivoNome', name.textContent);
-        localStorage.setItem('perfilAtivoImagem', img.src);
+        localStorage.setItem('perfilAtivoImagem', img.getAttribute('src'));
+        setTimeout(() => {
+            window.location.href = profile.href;
+        }, 100);
     });
 });
